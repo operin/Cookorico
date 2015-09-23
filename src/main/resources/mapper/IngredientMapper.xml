@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+  'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace="fil.iagl.cookorico.dao.IngredientDao">
+	
+	<resultMap type="fil.iagl.cookorico.entity.Ingredient" id="IngredientResultMap">
+		<id property="id" column="idIngredient"/>
+		<result property="name" column="name"/>
+		<result property="description" column="description"/>
+		<result property="modifDate" column="modifDate"/>
+		<result property="validation" column="validation"/>
+		<result property="disabled" column="disabled"/>
+		<result property="quality" column="quality"/>
+		<result property="unitOfMeasurement" column="unitOfMeasurement"/>
+		<association property="tags" javaType="Tag">
+			<id property="idTag" column="TagResultMap"/>
+		</association>
+		<association property="photos" javaType="Photo">
+			<id property="idPhoto" column="PhotoResultMap"/>
+		</association>
+	</resultMap>
+</mapper>
