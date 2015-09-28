@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+  'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='fil.iagl.cookorico.dao.RecipeDao'>
+	<resultMap type="fil.iagl.cookorico.entity.Recipe" id="RecipeResultMap">
+		<id property="id" column="idRecipe"/>
+		<result property="name" column="name"/>
+		<result property="description" column="description"/>
+		<result property="preparationTime" column="preparationTime"/>
+		<result property="cookingTime" column="cookingTime"/>
+		<result property="dish_type" column="dish_type"/>
+		<result property="difficulty" column="difficulty"/>
+		<result property="creationDate" column="creationDate"/>
+		<result property="modifDate" column="modifDate"/>
+		<result property="validation" column="validation"/>
+		<result property="validator" column="validator"/>
+		<result property="disabled" column="disabled"/>
+		<association property="creator">
+			<id property="fk_creator" javaType="CreatorResultMap"/>
+		</association>
+	</resultMap>
+	
+	<select id="getRecipesById" resultMap="RecipeResultMap">
+		select * from recipe
+	</select>
+</mapper>

@@ -20,4 +20,8 @@
 			<id property="idPhoto" column="PhotoResultMap"/>
 		</association>
 	</resultMap>
+	
+	<select id="getIngredient" resultMap="IngredientResultMap">
+		select * from ingredient
+	</select>
 </mapper>
