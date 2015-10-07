@@ -19,11 +19,7 @@
 <!--     <result property='modifDate' column='modif_date'/> -->
     <result property='disabled' column='disabled'/>
   </resultMap>
-	
-  <select id="getAllMembers" resultMap="memberResultMap">
-    SELECT * FROM member
-  </select>
-  
+	  
   <select id="getMemberWithCredentials" parameterType="map">
   	SELECT * FROM member WHERE username=#{username} AND password=#{password}
   </select>
